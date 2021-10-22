@@ -15,10 +15,10 @@ Everyone will get a chance to **be creative**, and work through some really **to
 ### Technical Requirements
 
 Your app must:
-* **HAVE ITS OWN REPO, under your github account. NOT A FORK.**
+<!-- * **HAVE ITS OWN REPO, under your github account. NOT A FORK.** -->
 * **Git 20+ commits** Commit early, commit often. Tell a story with your commits. Each message should give a clear idea what you changed.
-* **Include Wireframes and User Stories in the README** 
-* **Wireframe:** - Basically draw out what your game will look like. You can use paper or any wireframe tool you find online.
+<!-- * **Include Wireframes and User Stories in the README**  -->
+<!-- * **Wireframe:** - Basically draw out what your game will look like. You can use paper or any wireframe tool you find online. -->
 * **User Stories** - Wording should center around how a user interacts with your game, for example:
     1.  The user click starts and the level starts
     2.  When the user hits the ```f key``` a fire ball is catuplulated at a target. 
