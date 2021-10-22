@@ -1,25 +1,27 @@
 console.log('kako si ti? hvala, dobro sam.');
-
-const TamaNoNamae = prompt("たまごっちの名前は 何ですか？What is your Tamagotchi's name?"); 
+// main variables
+const tamagotchi = prompt("たまごっちの名前は 何ですか？What is your Tamagotchi's name?"); 
 const statsBar = document.getElementById('stats');
+let hungerCount = 0;
+let sleepCount = 2;
+let boredCount = 5;
 
 let hungryState = document.getElementById('hungry');
 let boredState = document.getElementById('bored');
 let sleepyState = document.getElementById('tired');
 let ageState = document.getElementById('age');
 
-statsBar.innerText = `${TamaNoNamae}'s vitals`;
+// initiate stats board
+statsBar.innerText = `${tamagotchi}'s vitals`;
 hungryState.innerText = "Hunger:";
 boredState.innerText = "Boredness:";
 sleepyState.innerText = "Sleepiness:";
 ageState.innerText = "Age:";
-//
-// // Food and Hunger
-//
 
+// initiate counts
 function initHunger(){
     let interval;
-    let count = 0;
+    // let count = 0;
     let baseRate = 5000;
 
     function renderNum(num){
@@ -32,27 +34,20 @@ function initHunger(){
     
     interval = setInterval(() => {
         //display content
-        renderNum(count);
+        renderNum(hungerCount);
         //update it
-        count = increment(count,1)
+        count = increment(hungerCount,1)
         
-        if(count >= 10) {
+        if(hungerCount >= 10) {
             //gameOver state
             clearInterval(interval);
         }
     }, baseRate)
 }
-function feed(){
-
-}
-
-//
-// // Sleepiness Section
-//
 
 function initSleeper(){
     let interval;
-    let count = 2;
+    // let count = 2;
     let baseRate = 10000;
 
     function renderNum(num){
@@ -62,58 +57,46 @@ function initSleeper(){
     function increment(val, step){
         return val += step;
     }
-
+    
     interval = setInterval(() => {
         //display content
-        renderNum(count);
+        renderNum(sleepCount);
         //update it
-        count = increment(count,1)
+        count = increment(sleepCount,1)
 
-        if(count >= 7) {
+        if(sleepCount >= 7) {
             //gameOver state
             clearInterval(interval);
         }
     }, baseRate)
 }
-function nap(){
-    
-}
-
-
-//
-// // Boredom and play section
-//
 
 function initBoredom(){
     let interval;
-    let count = 5;
+    // let count = 5;
     let baseRate = 4000;
     
     function renderNum(num){
         boredState.innerText = `Boredness: ${num}`;
     }
-
+    
     function increment(val, step){
         return val += step;
     }
-
+    
     interval = setInterval(() => {
         //display content
-        renderNum(count);
+        renderNum(boredCount);
         //update it
-        count = increment(count,1)
+        count = increment(boredCount,1)
         
-        if(count >= 15) {
+        if(boredCount >= 15) {
             //gameOver state
             clearInterval(interval);
         }
     }, baseRate)
 }
-function play() {
-    
-}
 
-// // Age
 function initAge(){
     let interval;
     let count = 1;
@@ -122,11 +105,11 @@ function initAge(){
     function renderNum(num){
         ageState.innerText = `Age in weeks: ${num}`;
     }
-
+    
     function increment(val, step){
         return val += step;
     }
-
+    
     interval = setInterval(() => {
         //display content
         renderNum(count);
@@ -145,14 +128,32 @@ initAge();
 initHunger();
 initBoredom();
 
+// Button Functions
+function feed(){
+    
+}
+function sleep(){
+    
+}
+function play() {
+    
+}
+
+addFeed = document.getElementById('feed');
+addSleep = document.getElementById('sleep');
+addPlay = document.getElementById('play');
+
+addFeed.addEventListener('click', feed);
+addSleep.addEventListener('click', sleep);
+addPlay.addEventListener('click', feeplayd);
 
 
 
 
 // To use a class or to not use a class?
 // class Tamagotchi {
-//     constructor(name, sleepiness = 3, hunger = 4, boredom = 1, age = 1) {
-//         this.name = name;
-//         this.state = lightsOff ? 'asleep' : 'awake';
-//     }
-// }
+    //     constructor(name, sleepiness = 3, hunger = 4, boredom = 1, age = 1) {
+    //         this.name = name;
+    //         this.state = lightsOff ? 'asleep' : 'awake';
+    //     }
+    // }
