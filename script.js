@@ -10,6 +10,9 @@ let hungryState = document.getElementById('hungry');
 let boredState = document.getElementById('bored');
 let sleepyState = document.getElementById('tired');
 let ageState = document.getElementById('age');
+let koDama = document.createElement('img');
+// koDama.src = "https://i.imgur.com/tJJEcAj.jpg";
+// document.getElementById('tmgc').append(koDama);
 
 // initiate stats board
 statsBar.innerText = `${tamagotchi}'s vitals`;
@@ -22,7 +25,7 @@ ageState.innerText = "Age:";
 function initHunger(){
     let interval;
     // let count = 0;
-    let baseRate = 5000;
+    let baseRate = 4000;
 
     function renderNum(num){
         hungryState.innerText = `Hunger: ${num}`
@@ -38,7 +41,7 @@ function initHunger(){
         //update it
         count = increment(hungerCount,1)
         
-        if(hungerCount >= 10) {
+        if(hungerCount >= 15) {
             //gameOver state
             clearInterval(interval);
         }
@@ -130,22 +133,35 @@ initBoredom();
 
 // Button Functions
 function feed(){
-    
+    hungerCount -= 3;
+    while (hungerCount < 0) {
+        hungerCount = 0;
+    }
 }
 function sleep(){
-    
+    sleepCount -= 5;
+    while (sleepCount < 0) {
+        sleepCount = 0;
+    }
 }
 function play() {
-    
+    boredCount -= 4;
+    while (boredCount < 0) {
+        boredCount = 0;
+    }
 }
 
 addFeed = document.getElementById('feed');
 addSleep = document.getElementById('sleep');
 addPlay = document.getElementById('play');
 
+addFeed.innerText = 'Feed';
+addSleep.innerText = 'Sleep';
+addPlay.innerText = 'Play';
+
 addFeed.addEventListener('click', feed);
 addSleep.addEventListener('click', sleep);
-addPlay.addEventListener('click', feeplayd);
+addPlay.addEventListener('click', play);
 
 
 
