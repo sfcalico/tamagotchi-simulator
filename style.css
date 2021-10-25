@@ -43,3 +43,6 @@ section {
     background-color:rgb(159, 238, 238);
     justify-content: space-around;
 }
+img {
+    border: 1px solid black;
+}
