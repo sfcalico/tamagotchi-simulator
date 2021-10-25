@@ -1,6 +1,6 @@
-console.log('kako si ti? hvala, dobro sam.');
+// console.log('kako si ti? hvala, dobro sam.');
 // main variables
-const tamagotchi = prompt("たまごっちの名前は 何ですか？What is your Tamagotchi's name?"); 
+const tamagotchi = prompt("What is your Tamagotchi's name?"); 
 const statsBar = document.getElementById('stats');
 let hungerCount = 0;
 let sleepCount = 2;
@@ -10,9 +10,11 @@ let hungryState = document.getElementById('hungry');
 let boredState = document.getElementById('bored');
 let sleepyState = document.getElementById('tired');
 let ageState = document.getElementById('age');
-// let koDama = document.createElement('img');
-// koDama.document.setAttribute("src","images/bear-img.jpg");
-// document.getElementById('tmgc').append(koDama);
+const koDama = document.createElement('img');
+koDama.src = './images/bear-img.jpg';
+koDama.height = 200;
+koDama.width = 200;
+document.querySelector('#tmgc').appendChild(koDama);
 
 // initiate stats board
 statsBar.innerText = `${tamagotchi}'s vitals`;
@@ -132,6 +134,7 @@ function initAge(){
 function initGameover() {
     document.getElementById("controls").style.filter = "blur(5px)";
     document.getElementById("metrics").style.filter = "blur(5px)";
+    koDama.src = './images/dead-bear.jpg';
     alert("You've neglected your pet and they've died. See you in jail, you monster!");
     alert("Please reload page to try again.")
 }

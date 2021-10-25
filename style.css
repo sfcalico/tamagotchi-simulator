@@ -8,29 +8,33 @@ aside {
     flex-wrap:wrap;
     background-color: darkcyan;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 3px solid springgreen;
     border-radius: 75%;
 }
 section {
     display: flex;
     align-items:center;
+    border: 2px solid mediumturquoise;
 }
 button:hover {
     background-color: rgb(159, 238, 238);
     transform: translate(-2px);
 }
-ul {
+div {
+    display: flex;
     padding: 5px;
     margin: 20px;
     border: 3px solid slateblue;
     border-radius: 20px;
     background-color: slategray;
     transform: translate(-1px);
+    justify-content: center;
 }
 
 #controls {
     margin: 10px;
     padding: 10px;
-    border-radius: 70%;
+    border-radius: 40%;
     background-color:rgb(159, 238, 238);
     justify-content: space-around;
 }
