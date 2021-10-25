@@ -1,10 +1,10 @@
-Here is my first attempt at a Tamagotchi-like game simulation.
+Here is my first attempt at a Tamagotchi-like game simulation. I used setInterval() and created an increment function to increase the different metrics of the pet's status throughout gameplay. I used addEventlisteners on buttons so that the user can alleviate the pet's issues.
 
 User Stories:
 1. When I load the page, I get to name my virtual pet
 2. On the main screen I can see my virtual pet and its metrics, like how hungry or sleepy it is.
 3. When one of the metrics gets high, I'm able to reduce the number. If its hunger is high, I can feed it; if its sleepiness is high, I can tell it to take a nap; and when it's boredom is high, I can play with it.
-4. If I neglect my pet too much, there are consequences
+4. If I neglect my pet too much, there are consequences.
 
 
 ![GA logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
