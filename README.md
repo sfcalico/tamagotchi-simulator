@@ -6,6 +6,8 @@ User Stories:
 3. When one of the metrics gets high, I'm able to reduce the number. If its hunger is high, I can feed it; if its sleepiness is high, I can tell it to take a nap; and when it's boredom is high, I can play with it.
 4. If I neglect my pet too much, there are consequences.
 
+In my code, I ha it such that when the metrics reach '10', the game is over, but the numbers would only reach to 8 before ending the game, so I coded it to end at '12'.
+
 
 ![GA logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
 # Tamagotchi

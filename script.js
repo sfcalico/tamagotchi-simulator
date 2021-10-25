@@ -43,7 +43,7 @@ function initHunger(){
         //update it
         hungerCount = increment(hungerCount,1);
         
-        if(hungerCount >= 10) {
+        if(hungerCount >= 12) {
             //gameOver state
             clearInterval(interval);
             initGameover();
@@ -70,7 +70,7 @@ function initSleeper(){
         //update it
         sleepCount = increment(sleepCount,1)
 
-        if(sleepCount >= 10) {
+        if(sleepCount >= 12) {
             //gameOver state
             clearInterval(interval);
             initGameover();
@@ -97,7 +97,7 @@ function initBoredom(){
         //update it
         boredCount = increment(boredCount,1)
         
-        if(boredCount >= 10) {
+        if(boredCount >= 12) {
             //gameOver state
             clearInterval(interval);
             initGameover();
@@ -122,6 +122,7 @@ function initAge(){
 function initGameover() {
     document.getElementById("controls").style.filter = "blur(5px)";
     document.getElementById("metrics").style.filter = "blur(5px)";
+    document.querySelector("img").style.filter = "blur(1px)";
     koDama.src = './images/dead-bear.jpg';
     alert("You've neglected your pet and they've died. See you in jail, you monster!");
     alert("Please reload page to try again.")
