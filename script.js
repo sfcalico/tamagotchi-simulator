@@ -164,14 +164,3 @@ addPlay.innerText = 'Play';
 addFeed.addEventListener('click', feed);
 addSleep.addEventListener('click', sleep);
 addPlay.addEventListener('click', play);
-
-
-
-
-// To use a class or to not use a class?
-// class Tamagotchi {
-    //     constructor(name, sleepiness = 3, hunger = 4, boredom = 1, age = 1) {
-    //         this.name = name;
-    //         this.state = lightsOff ? 'asleep' : 'awake';
-    //     }
-    // }
