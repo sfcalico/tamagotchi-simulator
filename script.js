@@ -43,7 +43,7 @@ function initHunger(){
         //update it
         hungerCount = increment(hungerCount,1);
         
-        if(hungerCount >= 15) {
+        if(hungerCount >= 10) {
             //gameOver state
             clearInterval(interval);
             initGameover();
@@ -70,7 +70,7 @@ function initSleeper(){
         //update it
         sleepCount = increment(sleepCount,1)
 
-        if(sleepCount >= 15) {
+        if(sleepCount >= 10) {
             //gameOver state
             clearInterval(interval);
             initGameover();
@@ -97,7 +97,7 @@ function initBoredom(){
         //update it
         boredCount = increment(boredCount,1)
         
-        if(boredCount >= 15) {
+        if(boredCount >= 10) {
             //gameOver state
             clearInterval(interval);
             initGameover();
