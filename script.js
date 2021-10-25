@@ -10,8 +10,8 @@ let hungryState = document.getElementById('hungry');
 let boredState = document.getElementById('bored');
 let sleepyState = document.getElementById('tired');
 let ageState = document.getElementById('age');
-let koDama = document.createElement('img');
-// koDama.src = "https://i.imgur.com/tJJEcAj.jpg";
+// let koDama = document.createElement('img');
+// koDama.document.setAttribute("src","images/bear-img.jpg");
 // document.getElementById('tmgc').append(koDama);
 
 // initiate stats board
@@ -39,7 +39,7 @@ function initHunger(){
         //display content
         renderNum(hungerCount);
         //update it
-        count = increment(hungerCount,1)
+        hungerCount = increment(hungerCount,1);
         
         if(hungerCount >= 15) {
             //gameOver state
@@ -51,7 +51,7 @@ function initHunger(){
 function initSleeper(){
     let interval;
     // let count = 2;
-    let baseRate = 10000;
+    let baseRate = 8000;
 
     function renderNum(num){
         sleepyState.innerText = `Sleepiness: ${num}`;
@@ -65,11 +65,12 @@ function initSleeper(){
         //display content
         renderNum(sleepCount);
         //update it
-        count = increment(sleepCount,1)
+        sleepCount = increment(sleepCount,1)
 
-        if(sleepCount >= 7) {
+        if(sleepCount >= 10) {
             //gameOver state
             clearInterval(interval);
+            initGameover();
         }
     }, baseRate)
 }
@@ -91,11 +92,12 @@ function initBoredom(){
         //display content
         renderNum(boredCount);
         //update it
-        count = increment(boredCount,1)
+        boredCount = increment(boredCount,1)
         
-        if(boredCount >= 15) {
+        if(boredCount >= 10) {
             //gameOver state
             clearInterval(interval);
+            initGameover();
         }
     }, baseRate)
 }
@@ -106,7 +108,7 @@ function initAge(){
     let baseRate = 10000;
     
     function renderNum(num){
-        ageState.innerText = `Age in weeks: ${num}`;
+        ageState.innerText = `Age: ${num}`;
     }
     
     function increment(val, step){
@@ -122,8 +124,16 @@ function initAge(){
         if(count >= 15) {
             //gameOver state
             clearInterval(interval);
+            initGameover();
         }
     }, baseRate)
+}
+
+function initGameover() {
+    document.getElementById("controls").style.filter = "blur(5px)";
+    document.getElementById("metrics").style.filter = "blur(5px)";
+    alert("You've neglected your pet and they've died. See you in jail, you monster!");
+    alert("Please reload page to try again.")
 }
 
 initSleeper();
@@ -151,6 +161,7 @@ function play() {
     }
 }
 
+// Action buttons
 addFeed = document.getElementById('feed');
 addSleep = document.getElementById('sleep');
 addPlay = document.getElementById('play');

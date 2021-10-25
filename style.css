@@ -1,4 +1,36 @@
+body {
+    background-color:rgb(92, 102, 102)
+}
+
 aside {
     display: flex;
     justify-content: center;
+    flex-wrap:wrap;
+    background-color: darkcyan;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 75%;
+}
+section {
+    display: flex;
+    align-items:center;
+}
+button:hover {
+    background-color: rgb(159, 238, 238);
+    transform: translate(-2px);
+}
+ul {
+    padding: 5px;
+    margin: 20px;
+    border: 3px solid slateblue;
+    border-radius: 20px;
+    background-color: slategray;
+    transform: translate(-1px);
+}
+
+#controls {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 70%;
+    background-color:rgb(159, 238, 238);
+    justify-content: space-around;
 }
