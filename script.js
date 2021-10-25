@@ -2,9 +2,9 @@
 // main variables
 const tamagotchi = prompt("What is your Tamagotchi's name?"); 
 const statsBar = document.getElementById('stats');
-let hungerCount = 0;
+let hungerCount = 1;
 let sleepCount = 2;
-let boredCount = 5;
+let boredCount = 3;
 
 let hungryState = document.getElementById('hungry');
 let boredState = document.getElementById('bored');
@@ -46,6 +46,7 @@ function initHunger(){
         if(hungerCount >= 15) {
             //gameOver state
             clearInterval(interval);
+            initGameover();
         }
     }, baseRate)
 }
@@ -69,7 +70,7 @@ function initSleeper(){
         //update it
         sleepCount = increment(sleepCount,1)
 
-        if(sleepCount >= 10) {
+        if(sleepCount >= 15) {
             //gameOver state
             clearInterval(interval);
             initGameover();
@@ -96,7 +97,7 @@ function initBoredom(){
         //update it
         boredCount = increment(boredCount,1)
         
-        if(boredCount >= 10) {
+        if(boredCount >= 15) {
             //gameOver state
             clearInterval(interval);
             initGameover();
@@ -116,19 +117,6 @@ function initAge(){
     function increment(val, step){
         return val += step;
     }
-    
-    interval = setInterval(() => {
-        //display content
-        renderNum(count);
-        //update it
-        count = increment(count,1)
-        
-        if(count >= 15) {
-            //gameOver state
-            clearInterval(interval);
-            initGameover();
-        }
-    }, baseRate)
 }
 
 function initGameover() {

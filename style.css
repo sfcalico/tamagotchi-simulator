@@ -16,13 +16,18 @@ section {
     align-items:center;
     border: 2px solid mediumturquoise;
 }
+button {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 button:hover {
     background-color: rgb(159, 238, 238);
     transform: translate(-2px);
 }
-div {
+section {
     display: flex;
-    padding: 5px;
+    padding: 10px;
     margin: 20px;
     border: 3px solid slateblue;
     border-radius: 20px;
